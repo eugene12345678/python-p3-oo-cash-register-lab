@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-
-# cash_register.py
-
 class CashRegister:
     def __init__(self, discount=0):
         """Initialize with optional discount and zero total."""
@@ -28,8 +25,7 @@ class CashRegister:
     def void_last_transaction(self):
         """Subtracts the last item from the total."""
         self.total -= self.last_transaction
-        # Remove the last transaction's items from the list
-        transaction_items = [item for item in self.items if item]  # Ensure items list is clean
+        transaction_items = [item for item in self.items if item] 
         num_items = int(self.last_transaction // (self.last_transaction / len(transaction_items)))
         self.items = self.items[:-num_items]
         if self.total < 0:
